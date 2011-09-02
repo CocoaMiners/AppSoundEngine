@@ -20,15 +20,15 @@ Best suited for their storage is the app delegate.
 
 1.  create property which holds the player in AppDelegate.h and import
 
-	```objective-c
+```objective-c
 	#import "VKRSAppSoundPlayer.h"
 
 	@property (retain) VKRSAppSoundPlayer *appSoundPlayer;
-	```
+```
 
 2.  load the sounds during startup
 
-	```objective-c
+```objective-c
 	- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
 	    VKRSAppSoundPlayer *aPlayer = [[VKRSAppSoundPlayer alloc] init];        
@@ -39,22 +39,22 @@ Best suited for their storage is the app delegate.
 	    self.appSoundPlayer = aPlayer;
 	    [aPlayer release];       
 	}
-	```
+```
 
 3.  add method for playing sounds to the appDelegate.m
 
-	```objective-c
+```objective-c
 	- (void)playSound:(NSString *)sound{	
     
 	    [self.appSoundPlayer playSound:sound];          
 	}
-	```
+```
 
 4.  just play from wherever you are
 
-	```objective-c
+```objective-c
 	    [(AppDelegate *)[[UIApplication sharedApplication] delegate] playSound:@"sound1"];
-	```
+```
 
 That's it. Hope it will save you some time, and if you have any comments, suggestions or event want to make it better - please do so! :)
 
