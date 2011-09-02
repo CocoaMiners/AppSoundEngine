@@ -18,13 +18,16 @@ Best suited for their storage is the app delegate.
 
 
 
-1.  create property which holds the player in AppDelegate.h and import
++ create property which holds the player in AppDelegate.h and import
+
 ```objective-c
     #import "VKRSAppSoundPlayer.h"
 
     @property (retain) VKRSAppSoundPlayer *appSoundPlayer;
 ```
-2.  load the sounds during startup
+
++ load the sounds during startup
+
 ```objective-c
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
@@ -37,14 +40,18 @@ Best suited for their storage is the app delegate.
     [aPlayer release];
 }
 ```
-3.  add method for playing sounds to the appDelegate.m
+
++ add method for playing sounds to the appDelegate.m
+
 ```objective-c
 - (void)playSound:(NSString *)sound{
 
     [self.appSoundPlayer playSound:sound];
 }
 ```
-4.  just play from wherever you are
+
++ just play from wherever you are
+
 ```objective-c
     [(AppDelegate *)[[UIApplication sharedApplication] delegate] playSound:@"sound1"];
 ```
