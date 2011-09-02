@@ -18,9 +18,9 @@ Best suited for their storage is the app delegate.
 
 
 
-1. create property which holds the player in appDelegate.h and import
+1. create property which holds the player in AppDelegate.h and import
 
-```
+```objective-c
 #import "VKRSAppSoundPlayer.h"
 
 @property (retain) VKRSAppSoundPlayer *appSoundPlayer;
@@ -43,7 +43,7 @@ Best suited for their storage is the app delegate.
 
 3. add method for playing sounds to the appDelegate.m
 
-```
+```objective-c
 - (void)playSound:(NSString *)sound{	
     
     [self.appSoundPlayer playSound:sound];          
@@ -52,8 +52,8 @@ Best suited for their storage is the app delegate.
 
 4. just play from wherever you are
 
-```
-    [(appDelegate *)[[UIApplication sharedApplication] delegate] playSound:@"sound1"];
+```objective-c
+    [(AppDelegate *)[[UIApplication sharedApplication] delegate] playSound:@"sound1"];
 ```
 
 That's it. Hope it will save you some time, and if you have any comments, suggestions or event want to make it better - please do so! :)
