@@ -18,7 +18,7 @@ Best suited for their storage is the app delegate.
 
 
 
--  create property which holds the player in AppDelegate.h and import
+- create property which holds the player in AppDelegate.h and import
 
 ```objective-c
     #import "VKRSAppSoundPlayer.h"
@@ -26,31 +26,31 @@ Best suited for their storage is the app delegate.
     @property (retain) VKRSAppSoundPlayer *appSoundPlayer;
 ```
 
--  load the sounds during startup
+- load the sounds during startup
 
 ```objective-c
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    VKRSAppSoundPlayer *aPlayer = [[VKRSAppSoundPlayer alloc] init];        
+    VKRSAppSoundPlayer *aPlayer = [[VKRSAppSoundPlayer alloc] init];
     [aPlayer addSoundWithFilename:@"sound1" andExtension:@"caf"];
     [aPlayer addSoundWithFilename:@"sound2" andExtension:@"caf"];
     [aPlayer addSoundWithFilename:@"sound3" andExtension:@"caf"];
     [aPlayer addSoundWithFilename:@"sound4" andExtension:@"caf"];
     self.appSoundPlayer = aPlayer;
-    [aPlayer release];       
+    [aPlayer release];
 }
 ```
 
--  add method for playing sounds to the appDelegate.m
+- add method for playing sounds to the appDelegate.m
 
 ```objective-c
-- (void)playSound:(NSString *)sound{	
+- (void)playSound:(NSString *)sound{
 
-    [self.appSoundPlayer playSound:sound];          
+    [self.appSoundPlayer playSound:sound];
 }
 ```
 
--  just play from wherever you are
+- just play from wherever you are
 
 ```objective-c
     [(AppDelegate *)[[UIApplication sharedApplication] delegate] playSound:@"sound1"];
