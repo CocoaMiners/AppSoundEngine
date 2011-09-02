@@ -29,7 +29,7 @@ Best suited for their storage is the app delegate.
 2.  load the sounds during startup
 
 	```objective-c
-	- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary 	*)launchOptions {
+	- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
 	    VKRSAppSoundPlayer *aPlayer = [[VKRSAppSoundPlayer alloc] init];        
 	    [aPlayer addSoundWithFilename:@"sound1" andExtension:@"caf"];
@@ -39,13 +39,13 @@ Best suited for their storage is the app delegate.
 	    self.appSoundPlayer = aPlayer;
 	    [aPlayer release];       
 	}
-```
+	```
 
 3.  add method for playing sounds to the appDelegate.m
 
 	```objective-c
 	- (void)playSound:(NSString *)sound{	
-	    
+    
 	    [self.appSoundPlayer playSound:sound];          
 	}
 	```
