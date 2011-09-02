@@ -9,17 +9,24 @@ AppSoundEngine framework brings these benefits to your app's UI sounds:
 
 - super easy implementation
 
+How to use it?
+==============
+
 For lowest play latency, you should create the sounds during app startup, and just play them when needed.
 
-Best suited for their storage is the app delegate. 
+Best suited for their storage is the app delegate.
 
-1. create property which holds the player in appDelegate.h
 
-@property (retain) VKRSAppSoundPlayer *appSoundPlayer;
+
+1. create property which holds the player in appDelegate.h and import
+
+`#import "VKRSAppSoundPlayer.h"
+
+@property (retain) VKRSAppSoundPlayer *appSoundPlayer;`
 
 2. load the sounds during startup
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+`- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     VKRSAppSoundPlayer *aPlayer = [[VKRSAppSoundPlayer alloc] init];        
     [aPlayer addSoundWithFilename:@"sound1" andExtension:@"caf"];
@@ -28,18 +35,18 @@ Best suited for their storage is the app delegate.
     [aPlayer addSoundWithFilename:@"sound4" andExtension:@"caf"];
     self.appSoundPlayer = aPlayer;
     [aPlayer release];       
-}
+}`
 
 3. add method for playing sounds to the appDelegate.m
 
-- (void)playSound:(NSString *)sound{	
+`- (void)playSound:(NSString *)sound{	
     
     [self.appSoundPlayer playSound:sound];          
-}
+}`
 
 4. just play from wherever you are
 
-    [(appDelegate *)[[UIApplication sharedApplication] delegate] playSound:@"sound1"];
+`    [(appDelegate *)[[UIApplication sharedApplication] delegate] playSound:@"sound1"];`
 
 That's it. Hope it will save you some time, and if you have any comments, suggestions or event want to make it better - please do so! :)
 
