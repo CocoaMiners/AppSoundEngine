@@ -9,10 +9,12 @@ AppSoundEngine framework brings these benefits to your app's UI sounds:
 
 - super easy implementation
 
+- flexibility. You can choose to use only VRKSSound, and add it to your app how it suits you. 
+
 How to use it?
 ==============
 
-For lowest play latency, you should create the sounds during app startup, and just play them when needed.
+For lowest possible play latency, you should create the sounds during app startup, and just play them when needed.
 
 Best suited for their storage is the app delegate.
 
@@ -58,5 +60,5 @@ Best suited for their storage is the app delegate.
 
 That's it. Hope it will save you some time, and if you have any comments, suggestions or event want to make it better - please do so! :)
 
-Thank zoul for inspiration https://gist.github.com/205857
+Thanks zoul for inspiration https://gist.github.com/205857
 
