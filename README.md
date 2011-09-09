@@ -18,7 +18,8 @@ For lowest possible play latency, you should create the sounds during app startu
 
 Best suited for their storage is the app delegate.
 
-
++ add AudioToolbox framework to your project. If you do not know how, here is link to apple doc:
+https://developer.apple.com/library/ios/#recipes/xcode_help-project_editor/Articles/AddingaLibrarytoaTarget.html#//apple_ref/doc/uid/TP40010155-CH17-SW1
 
 + create property which holds the player in AppDelegate.h and import
 
