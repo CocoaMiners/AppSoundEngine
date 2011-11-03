@@ -64,7 +64,7 @@
 
 - (void)soundDidFinishPlaying:(VKRSSound *)sound {
     
-    [self.soundsToPlay removeObject:sound];
+    [self.soundsToPlay removeObjectAtIndex:0];
     
     if ([self.soundsToPlay count]) {
         VKRSSound *soundToPlay = [self.soundsToPlay objectAtIndex:0];
