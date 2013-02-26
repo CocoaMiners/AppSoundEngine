@@ -6,7 +6,9 @@
 
 #import "VKRSSound.h"
 
-@interface VKRSSound ()
+@interface VKRSSound (){
+	NSDate *startPlay;
+}
 
 - (void)playFinished;
 
@@ -42,13 +44,17 @@ static void soundFinished (SystemSoundID mySSID, void *vkrsSound) {
 }
 
 - (void)play {
-    
+    startPlay=[[NSDate alloc]initWithTimeIntervalSinceNow:0];
     AudioServicesPlaySystemSound(handle);
 }
 
 - (void)playFinished {
 
-    [self.delegate soundDidFinishPlaying:self];
+	if ([startPlay timeIntervalSinceNow]>-0.5) {
+		[self.delegate soundDidFailedBecauseDeviceSilent:self];
+	}else{
+		[self.delegate soundDidFinishPlaying:self];
+	}
 }
 
 @end
