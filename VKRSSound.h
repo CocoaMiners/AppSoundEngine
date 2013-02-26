@@ -25,5 +25,6 @@
 @protocol VKRSSoundDelegate
 
 - (void)soundDidFinishPlaying:(VKRSSound *)sound;
+- (void)soundDidFailedBecauseDeviceSilent:(VKRSSound *)sound;
 
 @end
