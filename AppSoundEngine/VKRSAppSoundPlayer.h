@@ -10,6 +10,8 @@
 
 @interface VKRSAppSoundPlayer : NSObject <VKRSSoundDelegate>
 
+@property (nonatomic) BOOL soundsEnabled;
+
 + (id)sharedInstance;
 
 - (void)playSound:(NSString *)sound;

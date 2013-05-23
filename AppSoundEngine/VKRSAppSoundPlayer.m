@@ -38,6 +38,8 @@
 
 - (void)playSound:(NSString *)sound {
     
+    if (!self.soundsEnabled) return;
+    
     VKRSSound *soundToPlay = [self.sounds objectForKey:sound];
     
     if ([self.soundsToPlay count] == 0) {        
