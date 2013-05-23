@@ -5,7 +5,7 @@
 //  Copyright 2011 Cocoa Miners. All rights reserved.
 
 #import "VKRSAppSoundPlayer.h"
-#import "Singleton.h"
+#import "VKRSAPSSingleton.h"
 
 @interface VKRSAppSoundPlayer ()
 

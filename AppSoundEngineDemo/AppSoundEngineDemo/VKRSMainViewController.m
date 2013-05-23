@@ -7,10 +7,9 @@
 //
 
 #import "VKRSMainViewController.h"
-#import "VKRSAppDelegate.h"
+#import "VKRSAppSoundPlayer.h"
 
 @implementation VKRSMainViewController
-
 
 - (void)didReceiveMemoryWarning
 {
@@ -68,10 +67,10 @@
 
 - (IBAction)showInfo:(id)sender
 {   
-    [(VKRSAppDelegate *)[[UIApplication sharedApplication] delegate] playSound:@"touch"];
-    [(VKRSAppDelegate *)[[UIApplication sharedApplication] delegate] playSound:@"flip"];
+    [[VKRSAppSoundPlayer sharedInstance] playSound:@"touch"];
+    [[VKRSAppSoundPlayer sharedInstance] playSound:@"flip"];
     
-    VKRSFlipsideViewController *controller = [[[VKRSFlipsideViewController alloc] initWithNibName:@"VKRSFlipsideViewController" bundle:nil] autorelease];
+    VKRSFlipsideViewController *controller = [[VKRSFlipsideViewController alloc] initWithNibName:@"VKRSFlipsideViewController" bundle:nil];
     controller.delegate = self;
     controller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     [self presentModalViewController:controller animated:YES];

@@ -17,11 +17,11 @@
 		7A077C561462A2C700F92A25 /* VKRSFlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A077C551462A2C700F92A25 /* VKRSFlipsideViewController.m */; };
 		7A077C591462A2C700F92A25 /* VKRSMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A077C571462A2C700F92A25 /* VKRSMainViewController.xib */; };
 		7A077C5C1462A2C700F92A25 /* VKRSFlipsideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A077C5A1462A2C700F92A25 /* VKRSFlipsideViewController.xib */; };
-		7A077C661462A38F00F92A25 /* VKRSAppSoundPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A077C631462A38F00F92A25 /* VKRSAppSoundPlayer.m */; };
-		7A077C671462A38F00F92A25 /* VKRSSound.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A077C651462A38F00F92A25 /* VKRSSound.m */; };
 		7A077C6A1462A47500F92A25 /* flip.caf in Resources */ = {isa = PBXBuildFile; fileRef = 7A077C681462A47500F92A25 /* flip.caf */; };
 		7A077C6B1462A47500F92A25 /* touch.caf in Resources */ = {isa = PBXBuildFile; fileRef = 7A077C691462A47500F92A25 /* touch.caf */; };
 		7A077C6D1462B1D000F92A25 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A077C6C1462B1D000F92A25 /* AudioToolbox.framework */; };
+		7AE2B963174E4FB10053E98A /* VKRSAppSoundPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE2B95F174E4FB10053E98A /* VKRSAppSoundPlayer.m */; };
+		7AE2B964174E4FB10053E98A /* VKRSSound.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE2B962174E4FB10053E98A /* VKRSSound.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,13 +41,14 @@
 		7A077C551462A2C700F92A25 /* VKRSFlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VKRSFlipsideViewController.m; sourceTree = "<group>"; };
 		7A077C581462A2C700F92A25 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/VKRSMainViewController.xib; sourceTree = "<group>"; };
 		7A077C5B1462A2C700F92A25 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/VKRSFlipsideViewController.xib; sourceTree = "<group>"; };
-		7A077C621462A38F00F92A25 /* VKRSAppSoundPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKRSAppSoundPlayer.h; path = ../VKRSAppSoundPlayer.h; sourceTree = "<group>"; };
-		7A077C631462A38F00F92A25 /* VKRSAppSoundPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKRSAppSoundPlayer.m; path = ../VKRSAppSoundPlayer.m; sourceTree = "<group>"; };
-		7A077C641462A38F00F92A25 /* VKRSSound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKRSSound.h; path = ../VKRSSound.h; sourceTree = "<group>"; };
-		7A077C651462A38F00F92A25 /* VKRSSound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKRSSound.m; path = ../VKRSSound.m; sourceTree = "<group>"; };
 		7A077C681462A47500F92A25 /* flip.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = flip.caf; sourceTree = "<group>"; };
 		7A077C691462A47500F92A25 /* touch.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = touch.caf; sourceTree = "<group>"; };
 		7A077C6C1462B1D000F92A25 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		7AE2B95E174E4FB10053E98A /* VKRSAppSoundPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKRSAppSoundPlayer.h; sourceTree = "<group>"; };
+		7AE2B95F174E4FB10053E98A /* VKRSAppSoundPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKRSAppSoundPlayer.m; sourceTree = "<group>"; };
+		7AE2B960174E4FB10053E98A /* VKRSAPSSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKRSAPSSingleton.h; sourceTree = "<group>"; };
+		7AE2B961174E4FB10053E98A /* VKRSSound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKRSSound.h; sourceTree = "<group>"; };
+		7AE2B962174E4FB10053E98A /* VKRSSound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKRSSound.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,10 +69,7 @@
 		7A077C301462A2C600F92A25 = {
 			isa = PBXGroup;
 			children = (
-				7A077C621462A38F00F92A25 /* VKRSAppSoundPlayer.h */,
-				7A077C631462A38F00F92A25 /* VKRSAppSoundPlayer.m */,
-				7A077C641462A38F00F92A25 /* VKRSSound.h */,
-				7A077C651462A38F00F92A25 /* VKRSSound.m */,
+				7AE2B95D174E4FB10053E98A /* AppSoundEngine */,
 				7A077C451462A2C700F92A25 /* AppSoundEngineDemo */,
 				7A077C3E1462A2C700F92A25 /* Frameworks */,
 				7A077C3C1462A2C700F92A25 /* Products */,
@@ -124,6 +122,19 @@
 				7A077C4D1462A2C700F92A25 /* AppSoundEngineDemo-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7AE2B95D174E4FB10053E98A /* AppSoundEngine */ = {
+			isa = PBXGroup;
+			children = (
+				7AE2B95E174E4FB10053E98A /* VKRSAppSoundPlayer.h */,
+				7AE2B95F174E4FB10053E98A /* VKRSAppSoundPlayer.m */,
+				7AE2B960174E4FB10053E98A /* VKRSAPSSingleton.h */,
+				7AE2B961174E4FB10053E98A /* VKRSSound.h */,
+				7AE2B962174E4FB10053E98A /* VKRSSound.m */,
+			);
+			name = AppSoundEngine;
+			path = ../AppSoundEngine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,8 +207,8 @@
 				7A077C501462A2C700F92A25 /* VKRSAppDelegate.m in Sources */,
 				7A077C531462A2C700F92A25 /* VKRSMainViewController.m in Sources */,
 				7A077C561462A2C700F92A25 /* VKRSFlipsideViewController.m in Sources */,
-				7A077C661462A38F00F92A25 /* VKRSAppSoundPlayer.m in Sources */,
-				7A077C671462A38F00F92A25 /* VKRSSound.m in Sources */,
+				7AE2B963174E4FB10053E98A /* VKRSAppSoundPlayer.m in Sources */,
+				7AE2B964174E4FB10053E98A /* VKRSSound.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +288,7 @@
 		7A077C601462A2C700F92A25 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AppSoundEngineDemo/AppSoundEngineDemo-Prefix.pch";
 				INFOPLIST_FILE = "AppSoundEngineDemo/AppSoundEngineDemo-Info.plist";
@@ -288,6 +300,7 @@
 		7A077C611462A2C700F92A25 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AppSoundEngineDemo/AppSoundEngineDemo-Prefix.pch";
 				INFOPLIST_FILE = "AppSoundEngineDemo/AppSoundEngineDemo-Info.plist";
@@ -315,6 +328,7 @@
 				7A077C611462A2C700F92A25 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

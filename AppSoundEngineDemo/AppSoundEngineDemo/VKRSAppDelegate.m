@@ -7,41 +7,20 @@
 //
 
 #import "VKRSAppDelegate.h"
-
+#import "VKRSAppSoundPlayer.h"
 #import "VKRSMainViewController.h"
 
-@interface VKRSAppDelegate () 
-
-@property (strong, nonatomic) VKRSAppSoundPlayer *player;
-
-@end
-
 @implementation VKRSAppDelegate
-
-@synthesize window = _window;
-@synthesize mainViewController = _mainViewController;
-@synthesize player;
-
-- (void)dealloc
-{
-    [_window release];
-    [_mainViewController release];
-    [super dealloc];
-}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     //setup sounds for app
-    VKRSAppSoundPlayer *aPlayer = [[VKRSAppSoundPlayer alloc] init];
-    [aPlayer addSoundWithFilename:@"flip" andExtension:@"caf"];
-    [aPlayer addSoundWithFilename:@"touch" andExtension:@"caf"];    
-    
-    self.player = aPlayer;
-    [aPlayer release];
-    
-    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+    [[VKRSAppSoundPlayer sharedInstance] addSoundWithFilename:@"flip" andExtension:@"caf"];
+    [[VKRSAppSoundPlayer sharedInstance] addSoundWithFilename:@"touch" andExtension:@"caf"];
+       
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.mainViewController = [[[VKRSMainViewController alloc] initWithNibName:@"VKRSMainViewController" bundle:nil] autorelease];
+    self.mainViewController = [[VKRSMainViewController alloc] initWithNibName:@"VKRSMainViewController" bundle:nil];
     self.window.rootViewController = self.mainViewController;
     [self.window makeKeyAndVisible];
     return YES;
@@ -84,13 +63,6 @@
      Save data if appropriate.
      See also applicationDidEnterBackground:.
      */
-}
-
-#pragma mark AppSoundPlayer
-
-- (void)playSound:(NSString *)sound {
-    
-    [self.player playSound:sound];
 }
 
 @end

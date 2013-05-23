@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "VKRSAppSoundPlayer.h"
 
 @class VKRSMainViewController;
 
@@ -15,7 +14,5 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) VKRSMainViewController *mainViewController;
-
-- (void)playSound:(NSString *)sound;
 
 @end

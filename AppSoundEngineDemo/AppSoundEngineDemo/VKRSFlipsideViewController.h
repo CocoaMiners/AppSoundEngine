@@ -16,7 +16,7 @@
 
 @interface VKRSFlipsideViewController : UIViewController
 
-@property (assign, nonatomic) IBOutlet id <VKRSFlipsideViewControllerDelegate> delegate;
+@property (weak, nonatomic) IBOutlet id <VKRSFlipsideViewControllerDelegate> delegate;
 
 - (IBAction)done:(id)sender;
 - (IBAction)play:(id)sender;

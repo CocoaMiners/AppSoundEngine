@@ -11,7 +11,7 @@
 
 @interface VKRSSound : NSObject
 
-@property (nonatomic, assign) id <VKRSSoundDelegate> delegate;
+@property (nonatomic, weak) id <VKRSSoundDelegate> delegate;
 
 - (id)initWithSoundFileURL:(NSURL *)url;
 - (void)play;

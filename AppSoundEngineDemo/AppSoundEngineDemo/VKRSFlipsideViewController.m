@@ -7,7 +7,7 @@
 //
 
 #import "VKRSFlipsideViewController.h"
-#import "VKRSAppDelegate.h"
+#import "VKRSAppSoundPlayer.h"
 
 @implementation VKRSFlipsideViewController
 
@@ -64,14 +64,14 @@
 
 - (IBAction)done:(id)sender
 {
-    [(VKRSAppDelegate *)[[UIApplication sharedApplication] delegate] playSound:@"touch"];
-    [(VKRSAppDelegate *)[[UIApplication sharedApplication] delegate] playSound:@"flip"];
+    [[VKRSAppSoundPlayer sharedInstance] playSound:@"touch"];
+    [[VKRSAppSoundPlayer sharedInstance] playSound:@"flip"];
     [self.delegate flipsideViewControllerDidFinish:self];
 }
 
 - (IBAction)play:(id)sender {
 
-    [(VKRSAppDelegate *)[[UIApplication sharedApplication] delegate] playSound:@"flip"];
+    [[VKRSAppSoundPlayer sharedInstance] playSound:@"flip"];
 }
 
 
