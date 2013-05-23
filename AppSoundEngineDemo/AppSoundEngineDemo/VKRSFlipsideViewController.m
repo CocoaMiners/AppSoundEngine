@@ -8,10 +8,15 @@
 
 #import "VKRSFlipsideViewController.h"
 #import "VKRSAppSoundPlayer.h"
+#import "SettingsKeyNames.h"
+
+@interface VKRSFlipsideViewController ()
+
+@property (weak, nonatomic) IBOutlet UISwitch *soundsSwitch;
+
+@end
 
 @implementation VKRSFlipsideViewController
-
-@synthesize delegate = _delegate;
 
 - (void)didReceiveMemoryWarning
 {
@@ -24,7 +29,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	
+    self.soundsSwitch.on = [[NSUserDefaults standardUserDefaults] boolForKey:ASESoundsEnableSettingKey];
 }
 
 - (void)viewDidUnload
@@ -74,5 +80,12 @@
     [[VKRSAppSoundPlayer sharedInstance] playSound:@"flip"];
 }
 
+- (IBAction)soundsSettingChange:(UISwitch *)sender {
+    
+    BOOL soundsEnabled = sender.on;
+    [[NSUserDefaults standardUserDefaults] setBool:soundsEnabled forKey:ASESoundsEnableSettingKey];
+    [[VKRSAppSoundPlayer sharedInstance] setSoundsEnabled:soundsEnabled];
+    [[VKRSAppSoundPlayer sharedInstance] playSound:@"touch"];    
+}
 
 @end

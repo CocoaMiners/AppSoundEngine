@@ -31,6 +31,7 @@
         
         _sounds = [[NSMutableDictionary alloc] initWithCapacity:0];
         _soundsToPlay = [[NSMutableArray alloc] initWithCapacity:0];
+        _soundsEnabled = YES;
     }
     
     return self;

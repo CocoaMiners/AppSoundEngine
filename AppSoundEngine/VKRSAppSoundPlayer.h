@@ -10,6 +10,7 @@
 
 @interface VKRSAppSoundPlayer : NSObject <VKRSSoundDelegate>
 
+//the default value is YES. If you have sounds enabling/disabling switch in your app, read the setting from defaults and configure player.
 @property (nonatomic) BOOL soundsEnabled;
 
 + (id)sharedInstance;

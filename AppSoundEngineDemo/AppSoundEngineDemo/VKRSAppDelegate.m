@@ -9,14 +9,20 @@
 #import "VKRSAppDelegate.h"
 #import "VKRSAppSoundPlayer.h"
 #import "VKRSMainViewController.h"
+#import "SettingsKeyNames.h"
 
 @implementation VKRSAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    //setup default setting for sounds
+    [[NSUserDefaults standardUserDefaults] registerDefaults:[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Defaults" ofType:@"plist"]]];
+
+    
     //setup sounds for app
     [[VKRSAppSoundPlayer sharedInstance] addSoundWithFilename:@"flip" andExtension:@"caf"];
     [[VKRSAppSoundPlayer sharedInstance] addSoundWithFilename:@"touch" andExtension:@"caf"];
+    [[VKRSAppSoundPlayer sharedInstance] setSoundsEnabled:[[NSUserDefaults standardUserDefaults] boolForKey:ASESoundsEnableSettingKey]];
        
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.

@@ -22,6 +22,8 @@
 		7A077C6D1462B1D000F92A25 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A077C6C1462B1D000F92A25 /* AudioToolbox.framework */; };
 		7AE2B963174E4FB10053E98A /* VKRSAppSoundPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE2B95F174E4FB10053E98A /* VKRSAppSoundPlayer.m */; };
 		7AE2B964174E4FB10053E98A /* VKRSSound.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE2B962174E4FB10053E98A /* VKRSSound.m */; };
+		7AE2B977174E5B810053E98A /* SettingsKeyNames.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE2B976174E5B810053E98A /* SettingsKeyNames.m */; };
+		7AE2B97B174E5EF30053E98A /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AE2B97A174E5EF30053E98A /* Defaults.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,9 @@
 		7AE2B960174E4FB10053E98A /* VKRSAPSSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKRSAPSSingleton.h; sourceTree = "<group>"; };
 		7AE2B961174E4FB10053E98A /* VKRSSound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKRSSound.h; sourceTree = "<group>"; };
 		7AE2B962174E4FB10053E98A /* VKRSSound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKRSSound.m; sourceTree = "<group>"; };
+		7AE2B975174E5B810053E98A /* SettingsKeyNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsKeyNames.h; sourceTree = "<group>"; };
+		7AE2B976174E5B810053E98A /* SettingsKeyNames.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsKeyNames.m; sourceTree = "<group>"; };
+		7AE2B97A174E5EF30053E98A /* Defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Defaults.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +114,8 @@
 				7A077C571462A2C700F92A25 /* VKRSMainViewController.xib */,
 				7A077C5A1462A2C700F92A25 /* VKRSFlipsideViewController.xib */,
 				7A077C461462A2C700F92A25 /* Supporting Files */,
+				7AE2B975174E5B810053E98A /* SettingsKeyNames.h */,
+				7AE2B976174E5B810053E98A /* SettingsKeyNames.m */,
 			);
 			path = AppSoundEngineDemo;
 			sourceTree = "<group>";
@@ -120,6 +127,7 @@
 				7A077C481462A2C700F92A25 /* InfoPlist.strings */,
 				7A077C4B1462A2C700F92A25 /* main.m */,
 				7A077C4D1462A2C700F92A25 /* AppSoundEngineDemo-Prefix.pch */,
+				7AE2B97A174E5EF30053E98A /* Defaults.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -193,6 +201,7 @@
 				7A077C5C1462A2C700F92A25 /* VKRSFlipsideViewController.xib in Resources */,
 				7A077C6A1462A47500F92A25 /* flip.caf in Resources */,
 				7A077C6B1462A47500F92A25 /* touch.caf in Resources */,
+				7AE2B97B174E5EF30053E98A /* Defaults.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +218,7 @@
 				7A077C561462A2C700F92A25 /* VKRSFlipsideViewController.m in Sources */,
 				7AE2B963174E4FB10053E98A /* VKRSAppSoundPlayer.m in Sources */,
 				7AE2B964174E4FB10053E98A /* VKRSSound.m in Sources */,
+				7AE2B977174E5B810053E98A /* SettingsKeyNames.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
