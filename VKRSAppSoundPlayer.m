@@ -5,6 +5,7 @@
 //  Copyright 2011 Cocoa Miners. All rights reserved.
 
 #import "VKRSAppSoundPlayer.h"
+#import "Singleton.h"
 
 @interface VKRSAppSoundPlayer ()
 
@@ -15,15 +16,11 @@
 
 @implementation VKRSAppSoundPlayer
 
-@synthesize sounds;
-@synthesize soundsToPlay;
-
-- (void)dealloc {
-    
-    [sounds release];
-    [soundsToPlay release];
-    
-    [super dealloc];
++ (id)sharedInstance
+{
+    DEFINE_SHARED_INSTANCE_USING_BLOCK(^{
+        return [[self alloc] init];
+    });
 }
 
 - (id)init {
@@ -32,8 +29,8 @@
     
     if (self) {
         
-        sounds = [[NSMutableDictionary alloc] initWithCapacity:0];
-        soundsToPlay = [[NSMutableArray alloc] initWithCapacity:0];        
+        _sounds = [[NSMutableDictionary alloc] initWithCapacity:0];
+        _soundsToPlay = [[NSMutableArray alloc] initWithCapacity:0];
     }
     
     return self;
@@ -47,7 +44,7 @@
         [soundToPlay play];
     }
     
-    [soundsToPlay addObject:soundToPlay];    
+    [self.soundsToPlay addObject:soundToPlay];
 }
 
 - (void)addSoundWithFilename:(NSString *)filename andExtension:(NSString *)extension {
@@ -55,8 +52,7 @@
     NSURL *soundFileURL = [[NSBundle mainBundle] URLForResource:filename withExtension:extension];
     VKRSSound *aSound = [[VKRSSound alloc] initWithSoundFileURL:soundFileURL];
     aSound.delegate = self;
-    [self.sounds setObject:aSound forKey:filename];
-    [aSound release];       
+    [self.sounds setObject:aSound forKey:filename];     
 }
 
 #pragma mark -

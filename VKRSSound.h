@@ -6,14 +6,10 @@
 
 
 #import <Foundation/Foundation.h>
-#import <AudioToolbox/AudioToolbox.h>
 
 @protocol VKRSSoundDelegate;
 
-@interface VKRSSound : NSObject {
-    
-    SystemSoundID handle;    
-}
+@interface VKRSSound : NSObject
 
 @property (nonatomic, assign) id <VKRSSoundDelegate> delegate;
 

@@ -5,8 +5,12 @@
 //  Copyright 2011 Cocoa Miners. All rights reserved.
 
 #import "VKRSSound.h"
+#import <AudioToolbox/AudioToolbox.h>
 
-@interface VKRSSound ()
+@interface VKRSSound () {
+    
+    SystemSoundID handle;
+}
 
 - (void)playFinished;
 
@@ -14,11 +18,9 @@
 
 @implementation VKRSSound
 
-@synthesize delegate;
-
 static void soundFinished (SystemSoundID mySSID, void *vkrsSound) {
     
-    [(VKRSSound *)vkrsSound playFinished];   
+    [(__bridge VKRSSound *)vkrsSound playFinished];   
 }
 
 - (id)initWithSoundFileURL:(NSURL *)url {
@@ -27,8 +29,8 @@ static void soundFinished (SystemSoundID mySSID, void *vkrsSound) {
     
     if (self) {        
          
-        AudioServicesCreateSystemSoundID((CFURLRef) url, &handle);
-        AudioServicesAddSystemSoundCompletion (handle, NULL, NULL, soundFinished, self);
+        AudioServicesCreateSystemSoundID((__bridge CFURLRef) url, &handle);
+        AudioServicesAddSystemSoundCompletion (handle, NULL, NULL, soundFinished, (__bridge void *)(self));
     }
     
     return self;
@@ -38,7 +40,6 @@ static void soundFinished (SystemSoundID mySSID, void *vkrsSound) {
     
     AudioServicesRemoveSystemSoundCompletion(handle);
     AudioServicesDisposeSystemSoundID(handle);
-    [super dealloc];
 }
 
 - (void)play {

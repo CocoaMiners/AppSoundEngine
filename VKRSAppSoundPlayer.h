@@ -8,9 +8,9 @@
 #import "VKRSSound.h"
 
 
-@interface VKRSAppSoundPlayer : NSObject <VKRSSoundDelegate> {
-    
-}
+@interface VKRSAppSoundPlayer : NSObject <VKRSSoundDelegate>
+
++ (id)sharedInstance;
 
 - (void)playSound:(NSString *)sound;
 - (void)addSoundWithFilename:(NSString *)filename andExtension:(NSString *)extension;
