@@ -39,15 +39,28 @@
 
 - (void)playSound:(NSString *)sound {
     
+    [self playSound:sound wait:YES];
+}
+
+- (void)playSound:(NSString *)sound wait:(BOOL)wait {
+    
     if (!self.soundsEnabled) return;
     
     VKRSSound *soundToPlay = [self.sounds objectForKey:sound];
     
-    if ([self.soundsToPlay count] == 0) {        
+    if (wait) {
+        
+        if ([self.soundsToPlay count] == 0) {
+            [soundToPlay play];
+        }
+
+    } else {
+        
         [soundToPlay play];
     }
     
     [self.soundsToPlay addObject:soundToPlay];
+
 }
 
 - (void)addSoundWithFilename:(NSString *)filename andExtension:(NSString *)extension {
@@ -63,7 +76,12 @@
 
 - (void)soundDidFinishPlaying:(VKRSSound *)sound {
     
-    [self.soundsToPlay removeObjectAtIndex:0];
+    DLog(@"did finish playing, current soundsToPlay count:%i", [self.soundsToPlay count]);
+    
+    if ([self.soundsToPlay count]) {
+        [self.soundsToPlay removeObjectAtIndex:0];
+    }
+    
     
     if ([self.soundsToPlay count]) {
         VKRSSound *soundToPlay = [self.soundsToPlay objectAtIndex:0];

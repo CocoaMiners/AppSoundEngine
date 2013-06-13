@@ -15,7 +15,10 @@
 
 + (id)sharedInstance;
 
-- (void)playSound:(NSString *)sound;
+/* plays sound after playing is finish (waits for playing sound to finish, if some sound is playing) */
+- (void)playSound:(NSString *)sound __attribute__((deprecated("use playSound:wait: instead")));
+- (void)playSound:(NSString *)sound wait:(BOOL)wait;
+
 - (void)addSoundWithFilename:(NSString *)filename andExtension:(NSString *)extension;
 
 @end
