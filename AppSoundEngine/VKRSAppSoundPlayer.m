@@ -76,12 +76,9 @@
 
 - (void)soundDidFinishPlaying:(VKRSSound *)sound {
     
-    DLog(@"did finish playing, current soundsToPlay count:%i", [self.soundsToPlay count]);
-    
     if ([self.soundsToPlay count]) {
         [self.soundsToPlay removeObjectAtIndex:0];
     }
-    
     
     if ([self.soundsToPlay count]) {
         VKRSSound *soundToPlay = [self.soundsToPlay objectAtIndex:0];
